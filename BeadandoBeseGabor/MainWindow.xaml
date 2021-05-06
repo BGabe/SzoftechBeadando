@@ -44,16 +44,16 @@
                  Margin="48,0,25,0"
                  IsReadOnly="true" />
         <TextBlock Grid.Column="0"
-                   Grid.Row="2"
+                   Grid.Row="3"
                    Text="Available Money:"
-                   VerticalAlignment="Center"
+                   VerticalAlignment="Top"
                    Height="16"
-                   Margin="0,0,243,0"
+                   Margin="0,7,243,0"
                    Grid.ColumnSpan="2" />
         <TextBox x:Name="FirstMoneyTextBox"
                  Grid.Column="1"
-                 Grid.Row="2"
-                 Margin="48,0,25,0"
+                 Grid.Row="3"
+                 Margin="48,0,25,241"
                  IsReadOnly="true" />
         <TextBlock Grid.Column="0"
                    Grid.Row="3"
@@ -70,25 +70,24 @@
         <Button x:Name="DepositButtonOne"
                 Grid.Column="0"
                 Grid.Row="3"
-                Margin="31,248,262,22"
+                Margin="31,244,262,26"
                 Content="Deposit"
-                Click="DepositButtonOne_Click"
                 Grid.ColumnSpan="2"
                 Grid.RowSpan="2" />
         <Button x:Name="TransferButtonOne"
                 Grid.Column="1"
                 Grid.Row="3"
-                Margin="81,248,151,22"
+                Margin="81,244,151,26"
                 Content="Transfer"
-                Click="TransferButtonOne_Click"
                 Grid.RowSpan="2" />
         <Button x:Name="WithdrawButtonOne"
                 Grid.Column="1"
                 Grid.Row="3"
-                Margin="185,248,45,22"
+                Margin="191,244,39,0"
                 Content="Withdraw"
-                Click="WithdrawButtonOne_Click"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Height="37"
+                VerticalAlignment="Top" />
 
         <TextBlock Grid.Column="3"
                    Text="Second Invoice"
@@ -110,16 +109,16 @@
                  Margin="111,0,25,0"
                  IsReadOnly="true" />
         <TextBlock Grid.Column="2"
-                   Grid.Row="2"
+                   Grid.Row="3"
                    Text="Available Money:"
-                   VerticalAlignment="Center"
+                   VerticalAlignment="Top"
                    Height="16"
-                   Margin="72,0,243,0"
+                   Margin="72,7,243,0"
                    Grid.ColumnSpan="2" />
         <TextBox x:Name="SecondMoneyTextBox"
                  Grid.Column="3"
-                 Grid.Row="2"
-                 Margin="111,0,25,0"
+                 Grid.Row="3"
+                 Margin="111,0,25,241"
                  IsReadOnly="true" />
         <TextBlock Grid.Column="3"
                    Grid.Row="3"
@@ -137,21 +136,28 @@
                 Grid.Row="3"
                 Margin="25,244,268,26"
                 Content="Deposit"
-                Click="DepositButtonTwo_Click"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="-1.424" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
         <Button x:Name="TransferButtonTwo"
                 Grid.Column="3"
                 Grid.Row="3"
-                Margin="141,244,152,26"
+                Margin="143,244,151,26"
                 Content="Transfer"
-                Click="TransferButtonTwo_Click"
                 Grid.RowSpan="2" />
         <Button x:Name="WithdrawButtonTwo"
                 Grid.Column="3"
                 Grid.Row="3"
                 Margin="268,244,25,26"
                 Content="Withdraw"
-                Click="WithdrawButtonTwo_Click"
                 Grid.RowSpan="2" />
     </Grid>
 </Window>
