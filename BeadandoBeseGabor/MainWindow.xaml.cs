@@ -32,7 +32,9 @@ namespace BeadandoBeseGabor
 
 			RefreshUI();
 		}
-
+		/// <summary>
+		/// Definition of the deposition function, responsible for increasing the subject invoce available money with the given ammount
+		/// </summary>
 		private void Deposite(Invoice invoice, string amount)
 		{
 			try
@@ -53,7 +55,9 @@ namespace BeadandoBeseGabor
 				MessageBox.Show("Csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
-
+		/// <summary>
+		/// Definition of the transfer function, responsible for transfering the given ammount from the subject invocie to the another invoice
+		/// </summary>
 		private void Transfer(Invoice sender, Invoice destination, string amount)
 		{
 			try
@@ -74,7 +78,9 @@ namespace BeadandoBeseGabor
 				MessageBox.Show("Az utaláshoz rendelkezni kell elegendő összeggel illetve csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
-
+		/// <summary>
+		/// Definition of the withdraw function, responsible for decreasing the subject invoce available money with the given ammount
+		/// </summary>
 		private void Withdraw(Invoice invoice, string amount)
 		{
 			try
@@ -94,6 +100,9 @@ namespace BeadandoBeseGabor
 				MessageBox.Show("Csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
+		/// <summary>
+		/// Definition of the swap owners name function, responsible for swapping the subject invoce current owners name with the given name
+		/// </summary>
 		private void SwapOwnersName(Invoice invoice, string name)
 		{
 			try
@@ -106,7 +115,9 @@ namespace BeadandoBeseGabor
 				MessageBox.Show("Csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
-
+		/// <summary>
+		/// Definition of the refresh function, responsible for fetching invoice objects current state with the UI
+		/// </summary>
 		private void RefreshUI()
 		{
 			FirstOwnerTextBox.Text = invoiceOne.owner;
@@ -149,7 +160,7 @@ namespace BeadandoBeseGabor
 		{
 			SwapOwnersName(invoiceOne, FirstAmountTextBox.Text);
 		}
-
+		
 		private void SwapOwnersNameButtonTwo_Click(object sender, RoutedEventArgs e)
 		{
 			SwapOwnersName(invoiceTwo, SecondAmountTextBox.Text);
