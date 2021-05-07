@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\University\Szoftvertechnológia és grafikus felhasználói interfész tervezése\Beadando\BeadandoBeseGabor\BeadandoBeseGabor.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

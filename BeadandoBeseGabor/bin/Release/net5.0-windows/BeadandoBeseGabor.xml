@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BeadandoBeseGabor</name>
+    </assembly>
+    <members>
+        <member name="T:BeadandoBeseGabor.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:BeadandoBeseGabor.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.MainWindow.Deposite(BeadandoBeseGabor.Invoice,System.String)">
+            <summary>
+            Definition of the deposition function, responsible for increasing the subject invoce available money with the given ammount
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.MainWindow.Transfer(BeadandoBeseGabor.Invoice,BeadandoBeseGabor.Invoice,System.String)">
+            <summary>
+            Definition of the transfer function, responsible for transfering the given ammount from the subject invocie to the another invoice
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.MainWindow.Withdraw(BeadandoBeseGabor.Invoice,System.String)">
+            <summary>
+            Definition of the withdraw function, responsible for decreasing the subject invoce available money with the given ammount
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.MainWindow.SwapOwnersName(BeadandoBeseGabor.Invoice,System.String)">
+            <summary>
+            Definition of the swap owners name function, responsible for swapping the subject invoce current owners name with the given name
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.MainWindow.RefreshUI">
+            <summary>
+            Definition of the refresh function, responsible for fetching invoice objects current state with the UI
+            </summary>
+        </member>
+        <member name="M:BeadandoBeseGabor.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>
