@@ -70,24 +70,25 @@
         <Button x:Name="DepositButtonOne"
                 Grid.Column="0"
                 Grid.Row="3"
-                Margin="31,244,262,26"
+                Margin="10,244,283,26"
                 Content="Deposit"
                 Grid.ColumnSpan="2"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Click="DepositButtonOne_Click" />
         <Button x:Name="TransferButtonOne"
                 Grid.Column="1"
                 Grid.Row="3"
-                Margin="81,244,151,26"
+                Margin="30,244,204,26"
                 Content="Transfer"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Click="TransferButtonOne_Click" />
         <Button x:Name="WithdrawButtonOne"
                 Grid.Column="1"
                 Grid.Row="3"
-                Margin="191,244,39,0"
+                Margin="102,244,129,26"
                 Content="Withdraw"
                 Grid.RowSpan="2"
-                Height="37"
-                VerticalAlignment="Top" />
+                Click="WithdrawButtonOne_Click" />
 
         <TextBlock Grid.Column="3"
                    Text="Second Invoice"
@@ -134,30 +135,49 @@
         <Button x:Name="DepositButtonTwo"
                 Grid.Column="3"
                 Grid.Row="3"
-                Margin="25,244,268,26"
+                Margin="8,243,285,27"
                 Content="Deposit"
                 Grid.RowSpan="2"
-                RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform Angle="-1.424" />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Button.RenderTransform>
+                RenderTransformOrigin="0.5,0.5"
+                Click="DepositButtonTwo_Click">
+
         </Button>
         <Button x:Name="TransferButtonTwo"
                 Grid.Column="3"
                 Grid.Row="3"
-                Margin="143,244,151,26"
+                Margin="84,243,210,27"
                 Content="Transfer"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Click="TransferButtonTwo_Click" />
         <Button x:Name="WithdrawButtonTwo"
                 Grid.Column="3"
                 Grid.Row="3"
-                Margin="268,244,25,26"
+                Margin="159,244,135,26"
                 Content="Withdraw"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Click="WithdrawButtonTwo_Click" />
+        <Button Content="Swap Owners Name"
+                Name="SwapOwnersNameButtonOne"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Margin="177,243,0,0"
+                Grid.RowSpan="2"
+                Grid.Row="3"
+                VerticalAlignment="Top"
+                Height="39"
+                Width="114"
+                Click="SwapOwnersNameButtonOne_Click" />
+        <Button Content="Swap Owners Name"
+                Name="SwapOwnersNameButtonTwo"
+                Grid.Column="3"
+                HorizontalAlignment="Left"
+                Margin="235,243,0,0"
+                Grid.Row="3"
+                VerticalAlignment="Top"
+                Height="37"
+                Grid.RowSpan="2"
+                Width="119"
+                Click="SwapOwnersNameButtonTwo_Click" />
+
     </Grid>
 </Window>

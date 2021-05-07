@@ -8,14 +8,14 @@
 		private int _amount;
 
 		public int id { get; set; }
-		public int owner { get; set; }
+		public string owner { get; set; }
 		public int amount { get; set; }
 
 		public Invoice(int id, string owner, int amount)
 		{
-			_id = id;
-			_owner = owner;
-			_amount = amount;
+			this.id = id;
+			this.owner = owner;
+			this.amount = amount;
 		}
 	}
 }

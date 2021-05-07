@@ -20,21 +20,26 @@ namespace BeadandoBeseGabor
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		Invoice invoiceOne = new Invoice(1, "Balázs", 5000);
-		Invoice invoiceTwo = new Invoice(2, "Patrik", 5000);
+		Invoice invoiceOne;
+		Invoice invoiceTwo;
 
 		public MainWindow()
 		{
-			InitializeComponent();			
+			InitializeComponent();
+
+			invoiceOne = new Invoice(1, "Balázs", 5000);
+			invoiceTwo = new Invoice(2, "Patrik", 5000);
+
+			RefreshUI();
 		}
 
-		private void Deposite(Invoice invoice, int amount)
+		private void Deposite(Invoice invoice, string amount)
 		{
 			try
 			{
-				if (amount > 0)
+				if (int.Parse(amount) > 0)
 				{
-					invoice.amount += amount;
+					invoice.amount += int.Parse(amount);
 					RefreshUI();
 				}
 				else
@@ -42,21 +47,21 @@ namespace BeadandoBeseGabor
 					throw new ArgumentException();
 				}
 			}
-			catch (ArgumentException)
+			catch (Exception)
 			{
 
 				MessageBox.Show("Csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
-		private void Transfer(Invoice sender, Invoice destination, int amount)
+		private void Transfer(Invoice sender, Invoice destination, string amount)
 		{
 			try
 			{
-				if (sender.amount > amount)
+				if (sender.amount > int.Parse(amount))
 				{
-					sender.amount -= amount;
-					destination.amount += amount;
+					sender.amount -= int.Parse(amount);
+					destination.amount += int.Parse(amount);
 					RefreshUI();
 				}
 				else
@@ -64,19 +69,19 @@ namespace BeadandoBeseGabor
 					throw new ArgumentException();
 				}
 			}
-			catch (ArgumentException)
+			catch (Exception)
 			{
 				MessageBox.Show("Az utaláshoz rendelkezni kell elegendő összeggel illetve csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
-		private void Withdraw(Invoice invoice, int amount)
+		private void Withdraw(Invoice invoice, string amount)
 		{
 			try
 			{
-				if (amount > 0 && invoice.amount >= amount)
+				if (int.Parse(amount) > 0 && invoice.amount >= int.Parse(amount))
 				{
-					invoice.amount -= amount;
+					invoice.amount -= int.Parse(amount);
 					RefreshUI();
 				}
 				else
@@ -84,7 +89,19 @@ namespace BeadandoBeseGabor
 					throw new ArgumentException();
 				}
 			}
-			catch (ArgumentException)
+			catch (Exception)
+			{
+				MessageBox.Show("Csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+		private void SwapOwnersName(Invoice invoice, string name)
+		{
+			try
+			{
+				invoice.owner = name;
+				RefreshUI();
+			}
+			catch (Exception)
 			{
 				MessageBox.Show("Csak pozitív egész szám adaható meg a tranzakció értékeként", "Hiba történt!", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
@@ -92,8 +109,50 @@ namespace BeadandoBeseGabor
 
 		private void RefreshUI()
 		{
+			FirstOwnerTextBox.Text = invoiceOne.owner;
+			SecondOwnerTextBox.Text = invoiceTwo.owner;
 			FirstMoneyTextBox.Text = invoiceOne.amount.ToString();
 			SecondMoneyTextBox.Text = invoiceTwo.amount.ToString();
+		}
+
+		private void DepositButtonOne_Click(object sender, RoutedEventArgs e)
+		{
+			Deposite(invoiceOne, FirstAmountTextBox.Text);
+		}
+
+		private void TransferButtonOne_Click(object sender, RoutedEventArgs e)
+		{
+			Transfer(invoiceOne, invoiceTwo, FirstAmountTextBox.Text);
+		}
+
+		private void WithdrawButtonOne_Click(object sender, RoutedEventArgs e)
+		{
+			Withdraw(invoiceOne, FirstAmountTextBox.Text);
+		}
+
+		private void DepositButtonTwo_Click(object sender, RoutedEventArgs e)
+		{
+			Deposite(invoiceTwo, SecondAmountTextBox.Text);
+		}
+
+		private void TransferButtonTwo_Click(object sender, RoutedEventArgs e)
+		{
+			Transfer(invoiceTwo, invoiceOne, SecondAmountTextBox.Text);
+		}
+
+		private void WithdrawButtonTwo_Click(object sender, RoutedEventArgs e)
+		{
+			Withdraw(invoiceTwo, SecondAmountTextBox.Text);
+		}
+
+		private void SwapOwnersNameButtonOne_Click(object sender, RoutedEventArgs e)
+		{
+			SwapOwnersName(invoiceOne, FirstAmountTextBox.Text);
+		}
+
+		private void SwapOwnersNameButtonTwo_Click(object sender, RoutedEventArgs e)
+		{
+			SwapOwnersName(invoiceTwo, SecondAmountTextBox.Text);
 		}
 	}
 }
